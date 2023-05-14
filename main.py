@@ -82,13 +82,28 @@ service = Create_Service(CLIENT_SECRET_FILE, 'gmail', 'v1', SCOPES)
 
 # Single line message
 msg = "Hello" 
+msg = MIMEText(msg, 'plain')
+
+
+
+#Multiline message
+#Create an html file with the email content
+#uncomment the following lines of code and comment the code for single
+#line messge
+
+# with open("email_content.html", 'r') as f:
+#     msg = f.read()  
+#msg=MIMEText(msg, 'html')
+
+
+
 
 # Create Message Structure
 messag = MIMEMultipart()
 messag['from'] = "Sender's Name<Sender's Email>"
 messag['to'] = "Reciever's Email"
 messag['subject'] = "Subject of Email"
-msg = MIMEText(msg, 'plain')
+
 messag.attach(msg)
 
 #Uncomment the following code to add an attachment

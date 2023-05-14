@@ -161,3 +161,5 @@ cython_debug/
 
 credentials.json
 token_gmail_v1.pickle
+Cover.pdf
+test.py
